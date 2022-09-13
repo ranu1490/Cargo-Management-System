@@ -1,0 +1,61 @@
+﻿@model IEnumerable<CmsClassLibrary.Employee>
+
+@{
+    ViewData["Title"] = "EmpIndex";
+}
+
+<h1>Employee Details</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpPhNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpEmail)
+            </th>
+           @* <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>*@
+           
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpPhNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpEmail)
+            </td>
+@*            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>*@
+           
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.EmpId }) |
+              @*  @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
+                @Html.ActionLink("Delete", "Delete", new {  id=item.EmpId  })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

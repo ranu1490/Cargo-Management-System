@@ -1,0 +1,62 @@
+﻿@model IEnumerable<CmsClassLibrary.Cargo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Cargo Details</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CargoId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CargoName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Place)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CargoId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CargoName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Place)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @*@Html.ActionLink("Edit3", "Edit3", new { id=item.CargoId }) |*@
+                    @*  @Html.ActionLink("Details", "Details", new { id = item.CargoId }) |*@
+                    @*@Html.ActionLink("Delete", "Delete", new { id = item.CargoId })*@
+                    <a asp-controller="Cargoes" asp-action="Edit">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a asp-controller="Employee" asp-action="Dashboard">Back to List</a>
+</div>
+

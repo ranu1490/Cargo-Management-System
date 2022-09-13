@@ -1,0 +1,116 @@
+﻿@using CmsClassLibrary.Dtos
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    @*//  <title>@ViewData["Title"] - WebApplication7</title>*@
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+</head>
+<body>
+    
+    <table>
+        <tr>
+            <td><img src="~/img/logo.jpg" align="middle" width="250 " height="250" /></td>
+            <td><img src="~/img/cargopic.jpg" align="middle" width="900" height="250" /></td>
+            <td><img src="~/img/cargo.jpg" align="middle" width="450 " height=" 250" /></td>
+        </tr>
+    </table>
+    
+    
+    <header>
+         
+
+         @if (!(SessionHelper.GetObjectFromJson<LoginDto>(Context.Session, "LoginDto") == null))
+            {
+                <a class="nav-link text-dark" asp-controller="Employees"
+                    asp-action="Dashboard"></a>
+            }
+
+        else if (!(SessionHelper.GetObjectFromJson<AdminLoginDto>(Context.Session, "AdminLoginDto") == null))
+                        {@*
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Admin"
+                               asp-action="Logout">Logout</a>
+                            </li>*@
+                            <a class="nav-link text-dark" asp-controller="Admin"
+                           asp-action="Index"></a>
+                        }
+
+        else if (!(SessionHelper.GetObjectFromJson<CustLoginDto>(Context.Session, "CustLoginDto") == null))
+            {
+                 <a class="nav-link text-dark" asp-controller="Customers"
+                           asp-action="Dashboard"></a>
+            }
+
+            else
+            {
+                @*<table>
+            <tr>
+            <td><img src="~/img/logo.jpg" align="middle" width="250 " height="250" /></td>
+            <td><img src="~/img/cargopic.jpg" align="middle" width="900" height="250" /></td>
+            <td><img src="~/img/cargo.jpg" align="middle" width="450 " height=" 250" /></td>
+            </tr>
+            </table>*@
+                <h1 align="middle">Cargo Management System</h1>
+                <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                    <div class="container">
+                        @*<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action=""></a>*@
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                            <ul class="navbar-nav flex-grow-1">
+                                @* @if (SessionHelper.GetObjectFromJson<AdminLoginDto>(Context.Session, "AdminLoginDto") == null)
+                            {*@
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Employees" asp-action="Login">Employee Login</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Customers" asp-action="Register">Customer Login</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Login">Admin Login</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AboutUs">About Us</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="ContactUs">Contact Us</a>
+                                </li>
+
+                                @*else
+                            {@*
+                            <li class="nav-item">
+                            <a class="nav-link text-dark" asp-controller="Admin"
+                            asp-action="Logout">Logout</a>
+                            </li>
+                            <a class="nav-link text-dark" asp-controller="Admin"
+                            asp-action="Index"></a>
+                            }*@
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            }
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - Cargo Management System - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

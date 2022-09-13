@@ -1,0 +1,52 @@
+﻿@model CmsClassLibrary.Cargo
+
+@{
+    ViewData["Title"] = "Edit3";
+}
+
+<h2>Edit Cargo</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CargoId" class="control-label"></label>
+                <input asp-for="CargoId" class="form-control" readonly />
+                <span asp-validation-for="CargoId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CargoName" class="control-label"></label>
+                <input asp-for="CargoName" class="form-control" />
+                <span asp-validation-for="CargoName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Place" class="control-label"></label>
+                <input asp-for="Place" class="form-control" />
+                <span asp-validation-for="Place" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrderDate" class="control-label"></label>
+                <input asp-for="OrderDate" class="form-control" />
+                <span asp-validation-for="OrderDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-action="Dashboard">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

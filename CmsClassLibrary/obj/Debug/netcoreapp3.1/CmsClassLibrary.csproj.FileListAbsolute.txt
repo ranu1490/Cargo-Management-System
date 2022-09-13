@@ -1,0 +1,10 @@
+C:\Users\HP\Desktop\CargoMangSystem\CmsClassLibrary\bin\Debug\netcoreapp3.1\CmsClassLibrary.deps.json
+C:\Users\HP\Desktop\CargoMangSystem\CmsClassLibrary\bin\Debug\netcoreapp3.1\CmsClassLibrary.dll
+C:\Users\HP\Desktop\CargoMangSystem\CmsClassLibrary\bin\Debug\netcoreapp3.1\CmsClassLibrary.pdb
+C:\Users\HP\Desktop\CargoMangSystem\CmsClassLibrary\obj\Debug\netcoreapp3.1\CmsClassLibrary.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\CargoMangSystem\CmsClassLibrary\obj\Debug\netcoreapp3.1\CmsClassLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Desktop\CargoMangSystem\CmsClassLibrary\obj\Debug\netcoreapp3.1\CmsClassLibrary.AssemblyInfoInputs.cache
+C:\Users\HP\Desktop\CargoMangSystem\CmsClassLibrary\obj\Debug\netcoreapp3.1\CmsClassLibrary.AssemblyInfo.cs
+C:\Users\HP\Desktop\CargoMangSystem\CmsClassLibrary\obj\Debug\netcoreapp3.1\CmsClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\CargoMangSystem\CmsClassLibrary\obj\Debug\netcoreapp3.1\CmsClassLibrary.dll
+C:\Users\HP\Desktop\CargoMangSystem\CmsClassLibrary\obj\Debug\netcoreapp3.1\CmsClassLibrary.pdb
